@@ -1,0 +1,15 @@
+query InitLists {
+  listTodoLists {
+    items {
+      id
+      name
+      owner
+      tasks {
+        items {
+          id
+          title
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "schema": "src/graphql/schema.json",
+    "queries": "src/gql",
+    "project": "DataModel",
+    "output": "src/Data"
+}

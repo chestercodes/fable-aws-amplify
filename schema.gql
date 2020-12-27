@@ -1,0 +1,16 @@
+type TodoList @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  name: String!
+  owner: String
+  tasks: [TodoTask] @connection(keyName: "byTodoList", fields: ["id"])
+}
+
+type TodoTask @model @key(name: "byTodoList", fields: ["todoListID"]) @auth(rules: [
+    { allow: owner }
+    ]){
+  id: ID!
+  title: String!
+  todoListID: ID!
+  owner: String
+  todoList: TodoList @connection(fields: ["todoListID"])
+}
